@@ -1,3 +1,5 @@
+//题目地址 https://leetcode.com/problems/two-sum/?tab=Description
+
 def twoSum(nums: List[Int], target: Int): List[Int] =
   nums match {
     case List() => List()
