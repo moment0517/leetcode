@@ -1,4 +1,8 @@
-//题目地址 https://leetcode.com/problems/two-sum/?tab=Description
+/*题目地址 https://leetcode.com/problems/two-sum/?tab=Description
+*
+* Input: 1 2 3 4 5
+* Output: List(0, 3)
+* */
 
 import scala.collection.mutable
 
