@@ -8,9 +8,7 @@ object LengthOfLongestString {
 
   def lengthOfLongestString(s: String): Int = {
     val map = HashMap.empty[Char, Int]
-    var i = 0
-    var posTag = 0
-    var ans = 0
+    var i, posTag, ans = 0
     for (c <- s) {
       i += 1
       if (map.contains(c))
