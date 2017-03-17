@@ -1,11 +1,28 @@
 //题目地址 https://leetcode.com/problems/two-sum/?tab=Description
 
-def twoSum(nums: List[Int], target: Int): List[Int] =
-  nums match {
-    case List() => List()
-    case x :: xs => {
-      val index = xs.indexOf(target - x)
-      if (index >= 0) List(0, index + 1)
-      else twoSum(xs, target).map(_ + 1)
+import scala.collection.mutable
+
+object TwoSum {
+  def twoSum(nums: List[Int], target: Int): List[Int] = {
+
+    val map = mutable.HashMap.empty[Int, Int]
+    var i = 0
+
+    def search(nums: List[Int]): List[Int] = nums match {
+      case Nil => Nil
+      case x :: xs => {
+        if (map.contains(target - x))
+          List(map(target - x), i)
+        else {
+          map += x -> i
+          i += 1
+          search(xs)
+        }
+      }
     }
+
+    search(nums)
   }
+}
+
+
